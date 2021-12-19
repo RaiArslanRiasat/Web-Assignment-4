@@ -6,6 +6,9 @@ module.exports = function(req,res,next){
     if (!token){
         token = req.body.token
     }
+    if (!token){
+        token = req.query.token
+    }
     if(!token) return res.status(401).send('Access Denied');
 
     try{
