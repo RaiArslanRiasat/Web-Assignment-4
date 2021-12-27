@@ -17,11 +17,9 @@ router.post("/register", async (req, res) => {
   //checking the repeatition of the email
   const Email_exist = await User.findOne({ email: req.body.email });
   if (Email_exist) return res.status(400).send("Email already registered");
-
   //Do hashing over the password
   const salt = await bcrypt.genSalt(10);
   const Hashed_pass = await bcrypt.hash(req.body.password, salt);
-
   //create a new user
   const user = new User({
     name: req.body.name,
