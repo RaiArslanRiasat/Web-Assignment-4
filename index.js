@@ -8,6 +8,8 @@ const CreatePostRoute = require('./routes/createpost')
 
 const AllpostsRoute = require('./routes/Allposts')
 
+const AllusersRoute = require('./routes/Allusers')
+
 var cors = require('cors');
 
 // use it before all route definitions
@@ -37,8 +39,11 @@ app.use('/api/user', authRoute)
 //to create a post
 app.use('/api/createpost', CreatePostRoute)
 
-//to get all the posts
+//to get all the posts related apis
 app.use('/api/posts', AllpostsRoute)
+
+//to get all the users related apis
+app.use('/api/users', AllusersRoute)
 
 
 
