@@ -16,7 +16,7 @@ var cors = require('cors');
 app.use(cors({origin: 'http://localhost:3000'}));
 
 //connect to DB
-mongoose.connect('mongodb+srv://raheemm:raheem12@cluster0.duwqf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://raiarslanriasat:Arslan%40123@cluster0.edbuh.mongodb.net/?retryWrites=true&w=majority',
 (e) => console.log(e))
 
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -44,7 +44,6 @@ app.use('/api/posts', AllpostsRoute)
 
 //to get all the users related apis
 app.use('/api/users', AllusersRoute)
-
 
 
 

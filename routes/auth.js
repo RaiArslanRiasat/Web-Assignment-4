@@ -13,7 +13,7 @@ router.post("/register", async (req, res) => {
   //Validate before putting a user
   const { error } = registration_validation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
-
+  console.log("Error occured here is");
   //checking the repeatition of the email
   const Email_exist = await User.findOne({ email: req.body.email });
   if (Email_exist) return res.status(400).send("Email already registered");
